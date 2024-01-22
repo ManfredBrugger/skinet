@@ -1,15 +1,21 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
+import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { AppRoutingModule } from './app-routing-module'
+import { AppComponent } from './app.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+ import { provideHttpClient} from '@angular/common/http';
+
 @NgModule({
-  declarations: [AppComponent],
   imports: [
+    AppComponent,
     BrowserModule,
-//    AppRoutingModule, // MAB 122723 why not found? commening out for now
-    BrowserAnimationsModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  bootstrap: [AppComponent],
+  bootstrap: []
 })
 export class AppModule {}
